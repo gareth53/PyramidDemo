@@ -24,4 +24,11 @@ class MyModel(Base):
     name = Column(Text)
     value = Column(Integer)
 
+"""
+class RunkeeperProfile(Base):
+    __tablename__ = 'models'
+    id = Column(Integer, primary_key=True)
+    username = Column(Text)
+    password = Column(Text)
+"""
 Index('my_index', MyModel.name, unique=True, mysql_length=255)

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="${request.locale_name}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Alchemy Scaffold for The Pyramid Web Framework</title>
+  </head>
+
+  <body>
+    <h1>All Profiles</h1>
+
+  </body>
+</html>

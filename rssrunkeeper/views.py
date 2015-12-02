@@ -9,28 +9,24 @@ from .models import (
     )
 
 
-@view_config(route_name='home', renderer='templates/mytemplate.pt')
-def my_view(request):
+@view_config(route_name='home', renderer='templates/home.pt')
+def home(request):
     try:
         one = DBSession.query(MyModel).filter(MyModel.name == 'one').first()
     except DBAPIError:
+        conn_err_msg = "Pyramid is having a problem using your SQL database."
         return Response(conn_err_msg, content_type='text/plain', status_int=500)
     return {'one': one, 'project': 'RssRunKeeper'}
 
+@view_config(route_name='profiles', renderer='templates/profiles.pt')
+def profiles(request):
+    return { 'project': 'RssRunKeeper'}
 
-conn_err_msg = """\
-Pyramid is having a problem using your SQL database.  The problem
-might be caused by one of the following things:
+@view_config(route_name='profile_view', renderer='templates/profile.pt')
+def profile_view(request):
+    return {'name': request.matchdict['name'], 'project': 'RssRunKeeper'}
 
-1.  You may need to run the "initialize_RssRunKeeper_db" script
-    to initialize your database tables.  Check your virtual
-    environment's "bin" directory for this script and try to run it.
-
-2.  Your database server may not be running.  Check that the
-    database server referred to by the "sqlalchemy.url" setting in
-    your "development.ini" file is running.
-
-After you fix the problem, please restart the Pyramid application to
-try it again.
-"""
+@view_config(route_name='profiles_list', renderer='templates/profiles_list.pt')
+def profiles_list(request):
+    return { 'page': request.matchdict['page_no'], 'project': 'RssRunKeeper'}
 
