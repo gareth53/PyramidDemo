@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="${request.locale_name}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Add Profile</title>
+  </head>
+
+  <body>
+    <h1>Add a profile</h1>
+	
+    <ul tal:condition="errors">
+    	<li tal:repeat="error errors">${error}</li>
+    </ul>
+
+	<form method="POST" action=".">
+		<div>
+			<label for="profile_name">Name</label>
+			<input type="text" name="profile_name"/>
+		</div>
+		<div>
+			<label for="profile_slug">Slug</label>
+	 		<input type="text" name="profile_slug"/>
+	 	</div>
+		<input type="submit" value="Submit"/>
+	</form>
+<p><a href="/profiles/">All profiles</a></p>
+  </body>
+</html>
