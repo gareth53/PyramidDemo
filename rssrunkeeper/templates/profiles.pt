@@ -3,11 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Alchemy Scaffold for The Pyramid Web Framework</title>
+    <title>All Profiles</title>
   </head>
 
   <body>
     <h1>All Profiles</h1>
 
-  </body>
+<form method="POST" action=".">
+    <ul>
+    	<li tal:repeat="profile profiles">
+    		<input type="radio" name="profile_id" value="1" tal:attributes="value profile.id">
+    		<a href="#" tal:attributes="href profile.slug">
+    			${profile.username}
+    		</a>
+    	</li>
+	</ul>
+<input type="submit" value="Delete">
+</form>
+<p><a href="/profiles/add/">Add a profile</a></p>
+</body>
 </html>

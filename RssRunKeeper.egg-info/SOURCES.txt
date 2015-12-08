@@ -21,4 +21,7 @@ rssrunkeeper/static/pyramid-16x16.png
 rssrunkeeper/static/pyramid.png
 rssrunkeeper/static/theme.css
 rssrunkeeper/static/theme.min.css
-rssrunkeeper/templates/mytemplate.pt
+rssrunkeeper/templates/home.pt
+rssrunkeeper/templates/profile.pt
+rssrunkeeper/templates/profile_add.pt
+rssrunkeeper/templates/profiles.pt
